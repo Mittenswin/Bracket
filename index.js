@@ -51,11 +51,6 @@ $('#match').on('click',function(){
         }
         else if(i<tjoueur.length && !premierClic)
         {
-            if (round == 2) {
-                tjoueur = $("#pquart>p");
-                t2 = $("#pdemi>p");
-
-            }
             if (j<t2.length)
             {
                 t2[j].textContent = event.target.textContent;
@@ -70,7 +65,7 @@ $('#match').on('click',function(){
                 $('#pop-up').css('display', 'none');
                 i=0;
                 premierClic = true;
-                round+=1
+                round+=1;
             }
         }
     });
