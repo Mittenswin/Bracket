@@ -34,11 +34,20 @@ $('#match').css('display', 'inline-flex');
 ///
 round=1;
 $('#match').on('click',function(){
+    let premierClic = true;
     $('#pop-up').css('display', 'inline-flex');
 ////
-    let tjoueur = $("#ptree>p");
-    let t2 = $("#pquart>p");
-    let premierClic = true;
+    let tjoueur;
+    let t2;
+    if(round==1){
+        tjoueur = $("#ptree>p");
+        t2 = $("#pquart>p");
+    }
+    else if(round==2){
+        tjoueur = $("#pquart>p");
+        t2 = $("#pdemi>p");
+    }
+
     let i=0;
     let j=0;
 
