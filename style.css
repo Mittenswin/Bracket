@@ -1,0 +1,227 @@
+body {
+    background-color: #000;
+    height: 1500px;
+}
+
+p {
+  padding-top: 35px;
+}
+
+h1 {
+  position:fixed;
+  text-align: center;
+  color: wheat;
+  width:100%;
+  border:solid #36395A;
+  top:-20px;
+  left:-5px;
+  z-index: 1;
+  animation-duration: 3s;
+  animation-name: slidein;
+}
+
+@keyframes slidein {
+  from {
+    margin-left: 100%;
+    width: 300%;
+  }
+
+  to {
+    margin-left: 0%;
+    width: 100%;
+  }
+}
+
+#tree {
+    position: relative;
+    height: 675px;
+    width:1176px;
+    left:395px;
+    top:20px;
+}
+
+#input {
+    position:absolute;
+    background-color: #36395A;
+    height: 40px;
+    width:300px;
+    top:75px;
+    left:55px;
+    font-size: 32px;
+    font-family: sans-serif;
+    text-align: center;
+}
+
+::placeholder {
+    font-family: sans-serif;
+    opacity:90%;
+}
+
+.players { /**div input + li**/
+    width:300px;
+    height:500px;
+}
+
+.joueur {
+    position:relative;
+    color:#E2E2E6;
+    border: solid #36395A;
+    list-style-type: none;
+    top: -580px;
+    left:5px;
+    height: 40px;
+    width:305px;
+    font-size: 32px;
+    text-align: center;
+    font-family: sans-serif;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+#ptree {
+    position: absolute;
+    color:hwb(39 70% 4%);
+    top:25px;
+    left:450px;
+    width: 155px;
+    font-size: 20px;
+    font-family: sans-serif;
+    text-align: left;
+    overflow:hidden;
+}
+
+#pquart {
+  position:absolute;
+  top:65px;
+  left:695px;
+  width:155px;
+  color:rgb(10, 169, 108);
+  font-size: 20px;
+  font-family: sans-serif;
+  text-align: left;
+  overflow: hidden;
+}
+#pquart > p{
+  padding-bottom: 78px;
+}
+
+#pdemi {
+  position:absolute;
+  top:140px;
+  left:985px;
+  width:155px;
+  color:rgb(120, 89, 18);
+  font-size: 21px;
+  font-family: sans-serif;
+  text-align: left;
+  overflow: hidden;
+}
+
+#pdemi > p {
+  padding-bottom: 235px;
+}
+
+#winner {
+  position: absolute;
+  top:253px;
+  left:1270px;
+  width:230px;
+  color:#C5A643;
+  font-size: 50px;
+  font-family: sans-serif;
+  text-align: left;
+  overflow: hidden;
+}
+
+.lancer {
+  position:absolute;
+  top:-560px;
+  left:70px;
+  align-items: center;
+  appearance: none;
+  background-color: rgb(255, 255, 255);
+  border-radius: 4px;
+  border-width: 0;
+  box-shadow: rgba(45, 35, 66, 0.4) 0 2px 4px,rgba(45, 35, 66, 0.3) 0 7px 13px -3px,#D6D6E7 0 -3px 0 inset;
+  box-sizing: border-box;
+  color: #36395A;
+  cursor: pointer;
+  display: inline-flex;
+  font-family: fantasy;
+  height: 48px;
+  width:259px;
+  justify-content: center;
+  line-height: 1;
+  list-style: none;
+  overflow: hidden;
+  padding-left: 16px;
+  padding-right: 16px;
+  margin-bottom:20px;
+  position: relative;
+  text-align: left;
+  text-decoration: none;
+  transition: box-shadow .15s,transform .15s;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  white-space: nowrap;
+  will-change: box-shadow,transform;
+  font-size: 27px;
+}
+
+.lancer:focus {
+  box-shadow: #E2E2E6 0 0 0 1.5px inset, rgba(45, 35, 66, 0.4) 0 2px 4px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #E2E2E6 0 -3px 0 inset;
+}
+
+.lancer:hover {
+  box-shadow: rgba(45, 35, 66, 0.4) 0 4px 8px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #E2E2E6 0 -3px 0 inset;
+  transform: translateY(-2px);
+}
+
+.lancer:active { 
+  box-shadow: #E2E2E6 0 3px 7px inset;
+  transform: translateY(2px);
+}
+
+#match {     /*bouton match*/
+  display:none;
+}
+
+#pop-up {
+  position: relative;
+  backdrop-filter: blur(5px);
+  z-index: 2;
+  width:1900;
+  height:1000px;
+  top:-1400px;
+  left:-10px;
+  text-align: center;
+  display:none;
+  color: white;
+  align-items: center;
+}
+
+p#c1 {
+  background-color: red;
+  height: 200px;
+  width: 200px;
+  font-size: 50px;
+  overflow:hidden;
+}
+
+p#c2 {
+  background-color: blue;
+  height: 200px;
+  width:200px;
+  font-size: 50px;
+  overflow: hidden;
+}
+
+p#c1:hover{
+  background-color: #C5A643;
+  border: solid black 10px;
+}
+p#c2:hover {
+  background-color: #C5A643;
+  border: solid black 10px;
+}

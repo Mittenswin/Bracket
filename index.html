@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="bracket2.png" type="image/icon type">
+    <link href="style.css" rel="stylesheet" />    
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+    <title>The Bracket</title>
+</head>
+<body>
+    <h1>The Bracket</h1>
+    <div id="Bracket">
+        <img id="tree" src="bracket2.png">
+        <div id="ptree">
+            <p></p>
+            <p></p>
+            <p></p>
+            <p></p>
+            <p></p>
+            <p></p>
+            <p></p>
+            <p></p>
+
+        </div>
+        <div id="pquart">
+            <p></p>
+            <p></p>
+            <p></p>
+            <p></p>
+        </div>
+        <div id="pdemi">   
+            <p></p>
+            <p></p>
+        </div>
+
+            <p id="winner">WINNER</p>
+
+    </div>
+
+    <div class="players">
+        <input id='input' type="input" maxlength="15" placeholder="Entrez un nom ..."></input>
+        <ul>  
+        </ul>
+        <input class='lancer' id='lancer' type="button" value="Lancez"></input>
+        <input class='lancer' id="match" type="button" value="Match"></input>
+    </div>
+    <script src="index.js"></script>
+
+    <div id="pop-up">
+        <p id="c1"></p>
+        <p id="c2"></p>
+    </div>
+</body>
+</html>
