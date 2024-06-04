@@ -34,11 +34,12 @@ $('#match').css('display', 'inline-flex');
 ///
 round=1;
 $('#match').on('click',function(){
-    let premierClic = true;
     $('#pop-up').css('display', 'inline-flex');
 ////
+    let premierClic = true;
     let tjoueur;
     let t2;
+
     if(round==1){
         tjoueur = $("#ptree>p");
         t2 = $("#pquart>p");
@@ -73,6 +74,7 @@ $('#match').on('click',function(){
             else {
                 $('#pop-up').css('display', 'none');
                 i=0;
+                j=0;
                 premierClic = true;
                 round+=1;
             }
