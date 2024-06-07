@@ -48,7 +48,10 @@ $('#match').on('click',function(){
         tjoueur = $("#pquart>p");
         t2 = $("#pdemi>p");
     }
-
+    if (round == 3) {
+        tjoueur = $("#pdemi>p");
+        t2 = $("p#winner");
+    }
     let i=0;
     let j=0;
 
@@ -74,9 +77,31 @@ $('#match').on('click',function(){
             else {
                 $('#pop-up').css('display', 'none');
                 i=0;
-                j=0;
                 premierClic = true;
                 round+=1;
+                if ($('p#winner').text() != 'WINNER') {
+                    let img = $('<img>');
+                    img.addClass('confetis');
+                    img.attr({
+                        src: "confetis.gif",
+                        alt: "confetis"
+                    });
+                    $('body').append(img);
+                    console.log($('p#winner').text());
+                    let img2 = $('<img>');
+                    img2.addClass('confetis2');
+                    img2.attr({
+                        src: "giphy.gif",
+                        alt: "cr7"
+                    });
+                    $('body').append(img2);
+                    console.log($('p#winner').text());
+                    $('img.confetis2').on('click', function(event){
+                        $('.confetis2', '.confetis').css('display', 'none');
+                        location.reload();
+                    }
+                    )
+                }                
             }
         }
     });
