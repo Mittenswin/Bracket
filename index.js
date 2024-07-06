@@ -32,54 +32,41 @@ $('#match').css('display', 'inline-flex');
 }
 )
 ///
-round=1;
-$('#match').on('click',function(){
+let round = 1;
+let tjoueur = $("#ptree>p");
+let t2 = $("#pquart>p");
+let i = 0;
+let j = 0;
+
+$('#match').on('click', function() {
     $('#pop-up').css('display', 'inline-flex');
-////
-    let premierClic = true;
-    let tjoueur;
-    let t2;
+    updateMatchInfo();
 
-    if(round==1){
-        tjoueur = $("#ptree>p");
-        t2 = $("#pquart>p");
-    }
-    else if(round==2){
-        tjoueur = $("#pquart>p");
-        t2 = $("#pdemi>p");
-    }
-    if (round == 3) {
-        tjoueur = $("#pdemi>p");
-        t2 = $("p#winner");
-    }
-    let i=0;
-    let j=0;
-
-    $('p#c1').text(tjoueur[i].textContent);
-    $('p#c2').text(tjoueur[i+1].textContent);
-
-    $('p#c1, p#c2').on('click',function(event){
-        if (premierClic) {
-            premierClic = false;
+    $('p#c1, p#c2').off('click').on('click', function(event) {
+        if (j < t2.length) {
+            t2[j].textContent = event.target.textContent;
+            j++;
         }
-        else if(i<tjoueur.length && !premierClic)
-        {
-            if (j<t2.length)
-            {
-                t2[j].textContent = event.target.textContent;
-                j+=1;
-            }
-            i+=2;
-            if(i<tjoueur.length) {
-                $('p#c1').text(tjoueur[i].textContent);
-                $('p#c2').text(tjoueur[i+1].textContent);
-            }
-            else {
-                $('#pop-up').css('display', 'none');
-                i=0;
-                premierClic = true;
-                round+=1;
-                if ($('p#winner').text() != 'WINNER') {
+        i += 2;
+        if (i < tjoueur.length) {
+            updateMatchInfo();
+        } 
+        else {
+            $('#pop-up').css('display', 'none');
+            i = 0;
+            j = 0;
+            round++;
+            switch (round) {
+                case 2:
+                    tjoueur = $("#pquart>p");
+                    t2 = $("#pdemi>p");
+                    break;
+                case 3:
+                    tjoueur = $("#pdemi>p");
+                    t2 = $("p#winner");
+                    break;
+                case 4:
+                    $('#captureButton').css('display', 'inline-flex')
                     let img = $('<img>');
                     img.addClass('confetis');
                     img.attr({
@@ -97,14 +84,55 @@ $('#match').on('click',function(){
                     $('body').append(img2);
                     console.log($('p#winner').text());
                     $('img.confetis2').on('click', function(event){
-                        $('.confetis2', '.confetis').css('display', 'none');
                         location.reload();
                     }
                     )
-                }                
-            }
+                    $('img.confetis2').attr('title','Recommencer');
+                }       
         }
     });
-///
 });
-///
+
+function updateMatchInfo() {
+    $('p#c1').text(tjoueur[i].textContent);
+    $('p#c2').text(tjoueur[i + 1].textContent);
+
+    $('#vs').on('mousedown', function(event){
+        if($('#texte').css('display')=='flex'){
+            $('#texte').css('display', 'none')
+        }
+        else{
+        $('#texte').css('display', 'flex');
+        }
+    });
+}
+/// ---------------------------------- Partie Bouton de l'image du Bracket
+
+document.getElementById('captureButton').addEventListener('click', () => {
+    $('#copyright').css('display', 'flex');
+    const captureArea = document.querySelector('#Bracket');
+    html2canvas(captureArea, {backgroundColor: null}).then(canvas => {
+        // Définir la taille de la partie à rogner
+        const cropLeft = 470; // Largeur à rogner à gauche
+        const cropWidth = canvas.width - cropLeft;
+        const cropHeight = canvas.height;
+
+        // Crée un nouveau canvas pour la zone rognée
+        const croppedCanvas = document.createElement('canvas');
+        croppedCanvas.width = cropWidth;
+        croppedCanvas.height = cropHeight;
+        const ctx = croppedCanvas.getContext('2d');
+
+        // Dessine la partie rognée sur le nouveau canvas
+        ctx.drawImage(canvas, cropLeft, 0, cropWidth, cropHeight, 0, 0, cropWidth, cropHeight);
+
+        // Crée un lien de téléchargement
+        const link = document.getElementById('downloadLink');
+        link.href = croppedCanvas.toDataURL('image/png');
+        link.download = 'Bracket.png';
+        link.style.display = 'block';
+        link.textContent = 'Télécharger Bracket';
+    }).catch(err => {
+        console.error('Erreur de capture:', err);
+    });
+});

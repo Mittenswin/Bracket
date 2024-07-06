@@ -6,11 +6,12 @@
     <link rel="icon" href="bracket2.png" type="image/icon type">
     <link href="style.css" rel="stylesheet" />    
     <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
     <title>The Bracket</title>
 </head>
 <body>
     <h1>The Bracket</h1>
-    <div id="Bracket">
+    <div id="Bracket" class="Bracket">
         <img id="tree" src="bracket2.png">
         <div id="ptree">
             <p></p>
@@ -35,8 +36,11 @@
         </div>
 
             <p id="winner">WINNER</p>
-
+            <p id="copyright">TheBracket.<p>
     </div>
+
+    <button class="lancer" id="captureButton" style="display: none;">Image Bracket</button>
+    <a id="downloadLink" style="display: none;">Télécharger Bracket</a>
 
     <div class="players">
         <input id='input' type="input" maxlength="15" placeholder="Entrez un nom ..."></input>
@@ -45,11 +49,20 @@
         <input class='lancer' id='lancer' type="button" value="Lancez"></input>
         <input class='lancer' id="match" type="button" value="Match"></input>
     </div>
-    <script src="index.js"></script>
 
     <div id="pop-up">
+        <p id="question">Qui gagne ?</p>
         <p id="c1"></p>
         <p id="c2"></p>
+        <p id="vs">VS</p>
+        <p id="texte">
+            Le but ici est de déterminer qui serais le vaiqueur lors d'un affrontement selon toi,
+            avec plusieurs critères comme la performance, la popularité, la polyvalence, le palmarès ou 
+            encore la synergie / l'adaptabilité.
+        </p>
     </div>
+    
+    <script src="index.js"></script>
+
 </body>
 </html>
