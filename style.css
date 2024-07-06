@@ -144,7 +144,7 @@ h1 {
   position: absolute;
   top:74%;
   left: 82%;
-  font-family: fantasy;
+  font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
   font-size: 50px;
   z-index:2;
 }
@@ -163,7 +163,7 @@ h1 {
   color: #36395A;
   cursor: pointer;
   display: inline-flex;
-  font-family: fantasy;
+  font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
   height: 48px;
   width:259px;
   justify-content: center;
@@ -220,7 +220,7 @@ h1 {
   position: absolute;
   top:15%;
   left: 10%;
-  font-family: fantasy;
+  font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
   font-size: 70px;
   -webkit-text-stroke: 2px rgb(79, 36, 36);
 }
@@ -230,7 +230,7 @@ h1 {
   position: absolute;
   top:60%;
   left:15px;
-  font-family: fantasy;
+  font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
   font-size: 25px;
   color:wheat;
   -webkit-text-stroke: 1px rgb(0, 0, 0);
@@ -245,7 +245,7 @@ h1 {
   left: 42.5%;
   height:40px;
   width:50px;
-  font-family: fantasy;
+  font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
   font-size: 25px;
   border: solid 5px #fff;
   border-radius:70%;
