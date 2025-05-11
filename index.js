@@ -111,24 +111,16 @@ function updateMatchInfo() {
 document.getElementById('captureButton').addEventListener('click', () => {
     $('#copyright').css('display', 'flex');
     const captureArea = document.querySelector('#Bracket');
-    html2canvas(captureArea, {backgroundColor: null}).then(canvas => {
-        // Définir la taille de la partie à rogner
-        const cropLeft = 470; // Largeur à rogner à gauche
-        const cropWidth = canvas.width - cropLeft;
-        const cropHeight = canvas.height;
-
-        // Crée un nouveau canvas pour la zone rognée
-        const croppedCanvas = document.createElement('canvas');
-        croppedCanvas.width = cropWidth;
-        croppedCanvas.height = cropHeight;
-        const ctx = croppedCanvas.getContext('2d');
-
-        // Dessine la partie rognée sur le nouveau canvas
-        ctx.drawImage(canvas, cropLeft, 0, cropWidth, cropHeight, 0, 0, cropWidth, cropHeight);
-
-        // Crée un lien de téléchargement
+    
+    html2canvas(captureArea, {
+        backgroundColor: null,
+        scale: 2, // Augmente la qualité de l'image
+        logging: false, // Désactive les logs
+        allowTaint: true, // Permet le chargement d'images cross-origin
+        useCORS: true // Utilise CORS pour les images
+    }).then(canvas => {
         const link = document.getElementById('downloadLink');
-        link.href = croppedCanvas.toDataURL('image/png');
+        link.href = canvas.toDataURL('image/png');
         link.download = 'Bracket.png';
         link.style.display = 'block';
         link.textContent = 'Télécharger Bracket';
