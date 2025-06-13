@@ -53,21 +53,6 @@ Ce projet m’a permis de :
 
 ---
 
-## 🛠️ Idées d'améliorations
-
-- Ajouter un mode **double élimination**
-- Supporter plus de 8 participants (16 ou 32)
-- Exportation directe en **PDF**
-- Partage social intégré
-
----
-
-## 📸 Capture d’écran *(optionnelle)*
-
-![Capture de The Bracket](bracket.png)
-
----
-
 ## 🔓 Licence
 
 Projet libre d’utilisation et de modification pour usage personnel ou communautaire.
