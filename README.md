@@ -38,7 +38,7 @@
 2. Cliquez sur "Lancez" pour générer le bracket
 3. Cliquez sur "Match" pour faire apparaître les duels
 4. Choisissez les vainqueurs un par un via le pop-up
-5. Générez une image souvenir avec "Image Bracket"
+5. Générez une image du Bracket
 
 ---
 
