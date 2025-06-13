@@ -64,7 +64,7 @@ Ce projet m’a permis de :
 
 ## 📸 Capture d’écran *(optionnelle)*
 
-![Capture de The Bracket](screenshot.png)
+![Capture de The Bracket](bracket.png)
 
 ---
 
